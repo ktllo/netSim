@@ -17,4 +17,4 @@ a UDP datagram and send it out. Each connect required their own port.
 
 Synchronized mode are reuired to synchronized their clock every 10000 ticks. Slave are required to notify the master that they have finished that 10000ticks, and the slave has to wait the master told them to continue. This will requires an extra UDP port.
 
-The simulation across machine are intended to designed as a unreliaable link, if reliable link is required, it should be supported by the upper layer(Even simulation of OSI layer 1)
+The simulation across machine are intended to designed as a unreliable link, if reliable link is required, it should be supported by the upper layer(Even simulation of OSI layer 1)
