@@ -13,3 +13,6 @@ hs_err_pid*
 
 #backup file
 *~
+
+#vim swap
+.*.swp
