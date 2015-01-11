@@ -12,9 +12,16 @@ Any data passing though different part of the OSI model should done though passi
 ## Simulation across machine
 There are 2 mode of simulation, synchronized and asynchronize. 
 
-Asynchronize mode will not synchronize the clock among different machine. The machine will send the package embeded into
-a UDP datagram and send it out. Each connect required their own port.
+Asynchronize mode will not synchronize the clock among different machine. Each link required their own port.
 
-Synchronized mode are reuired to synchronized their clock every 10000 ticks. Slave are required to notify the master that they have finished that 10000ticks, and the slave has to wait the master told them to continue. This will requires an extra UDP port.
+Synchronized mode are reuired to synchronized their clock every 10000 ticks. Slave are required to notify the master that they have finished that 10000ticks, and the slave has to wait the master told them to continue. This will requires an extra TCP port.
 
 The simulation across machine are intended to designed as a unreliable link, if reliable link is required, it should be supported by the upper layer(Even simulation of OSI layer 1)
+
+User are free to select the port number to be used for data. Synchronized data use a specific port, which is yet to be decided.
+### MTU for Simulation across machine
+MTU for simulation  across machine is 65507 bytes, including ALL headers. Although this number may be reduced due to the implemention of Java
+### Datagram format(Payload)
+We just load the uplayer data as the UDP payload. No additional header is included.
+
+
